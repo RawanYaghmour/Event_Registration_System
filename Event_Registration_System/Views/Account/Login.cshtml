@@ -1,0 +1,27 @@
+﻿@model Event_Registration_System.Models.DTO.LoginDto
+
+<form asp-action="Login" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="sign-in-htm">
+        <div class="group">
+            <label asp-for="Username" class="label"></label>
+            <input asp-for="Username" class="input" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div class="group">
+            <label asp-for="Password" class="label"></label>
+            <input asp-for="Password" type="password" class="input" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="group">
+            <input type="submit" class="button" value="Sign In" />
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
